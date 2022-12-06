@@ -29,20 +29,20 @@ runs:
 
 # name: 'Deploy to AWS S3'
 # description: 'Deploy a static website via AWS S3'
-inputs:
-  bucket:
-    description: 'The S3 bucket name.'
-    required: true
-  bucket-region:
-    description: 'The AWS region to access the bucket.'
-    required: false
-    default: 'us-east-1'
-  dist-folder:
-    description: 'The path to the folder that we wish to upload'
-    required: true
-outputs:
-  site-url:
-    description: 'The URL of the deployed website.' 
-runs: 
-  using: 'node16'
-  main: 'main.js'
+# inputs:
+#   bucket:
+#     description: 'The S3 bucket name.'
+#     required: true
+#   bucket-region:
+#     description: 'The AWS region to access the bucket.'
+#     required: false
+#     default: 'us-east-1'
+#   dist-folder:
+#     description: 'The path to the folder that we wish to upload'
+#     required: true
+# outputs:
+#   site-url:
+#     description: 'The URL of the deployed website.' 
+# runs: 
+#   using: 'node16'
+#   main: 'main.js'
