@@ -15,8 +15,8 @@ def run():
         for file in files:
             s3_client.upload_file(os.path.join(root, file), bucket, file)
     
-    website_url = f'http://{bucket}.s3-website-{bucket_region}.amazonaws.com'
-    print(f'::set-output name=website-url::{website_url}')
+    site_url = f'http://{bucket}.s3-website-{bucket_region}.amazonaws.com'
+    print(f'::set-output name=site-url::{site_url}')
 
 if __name__ == '__main__':
     run()
