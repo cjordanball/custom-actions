@@ -1,6 +1,6 @@
 import os
 import boto3
-from botocore.config import config
+from botocore.config import Config
 
 def run():
     bucket = os.environ['INPUT_BUCKET']
