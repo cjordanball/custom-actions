@@ -51,6 +51,9 @@ jobs:
           name: dist-files
           path: dist
   deploy:
+    permissions:
+      id-token: write
+      contents: read
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -63,6 +66,11 @@ jobs:
           path: ./dist
       - name: Output contents
         run: ls
+      - name: Get AWS permissions
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::524071244908:role/GitHubDemo
+          aws-region: us-east-1
       - name: Deploy site
         id: deploy-site
         uses: ./.github/actions/deploy-s3-javascript
